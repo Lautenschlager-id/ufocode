@@ -5,11 +5,24 @@ namespace ufocode
 {
 	public class UfoCode : Game
 	{
-		// Multiple layer depths
-		private SpriteBatch Background, Middleground, Foreground;
+		private GraphicsDeviceManager graphics;
+		private SpriteBatch spriteBatch;
 
-		GraphicsDeviceManager graphics;
 		public static UfoCode Instance { get; private set; }
+
+		private static Viewport viewPort
+		{
+			get => Instance.GraphicsDevice.Viewport;
+		}
+
+		// Total area of the window.
+		public static Vector2 ScreenDimension
+		{
+			get => new Vector2(viewPort.Width, viewPort.Height);
+		}
+
+		// Area of the window where the action is limited.
+		public static Rectangle ScreenBound { get; set; }
 
 		public UfoCode()
 		{
@@ -28,9 +41,7 @@ namespace ufocode
 
 		protected override void LoadContent()
 		{
-			Background = new SpriteBatch(GraphicsDevice);
-			Middleground = new SpriteBatch(GraphicsDevice);
-			Foreground = new SpriteBatch(GraphicsDevice);
+			spriteBatch = new SpriteBatch(GraphicsDevice);
 
 			SpriteContent.LoadContent(Content);
 			FontContent.LoadContent(Content);
@@ -44,20 +55,19 @@ namespace ufocode
 			if (!IsActive) return;
 			Input.Update();
 
+			EntityManager.Update(); // Temporary, only works in game
+
 			base.Update(gameTime);
 		}
 
 		protected override void Draw(GameTime gameTime)
 		{
-			if (!IsActive) return;
 			GraphicsDevice.Clear(Color.Black);
+			if (!IsActive) return;
 
-			Background.Begin();
-			Background.End();
-			Middleground.Begin();
-			Middleground.End();
-			Foreground.Begin();
-			Foreground.End();
+			spriteBatch.Begin();
+			EntityManager.Draw(spriteBatch); // Temporary, only works in game
+			spriteBatch.End();
 
 			base.Draw(gameTime);
 		}
