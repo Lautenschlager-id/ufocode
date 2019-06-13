@@ -1,7 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿/// UfoCode - Copyright (C) Shallow
+/// <summary>
+/// Enumerations and constants of the game.
+/// </summary>
 
 namespace ufocode
 {

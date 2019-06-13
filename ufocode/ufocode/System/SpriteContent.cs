@@ -1,4 +1,9 @@
-﻿using Microsoft.Xna.Framework.Content;
+﻿/// UfoCode - Copyright (C) Shallow
+/// <summary>
+/// The image content loader, where the images are loaded and managed.
+/// </summary>
+
+using Microsoft.Xna.Framework.Content;
 
 namespace ufocode
 {

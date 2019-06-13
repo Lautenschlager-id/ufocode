@@ -1,4 +1,9 @@
-﻿using Microsoft.Xna.Framework.Graphics;
+﻿/// UfoCode - Copyright (C) Shallow
+/// <summary>
+/// Manages all the entities of the game (characters, bullets, ...) and its collisions.
+/// </summary>
+
+using Microsoft.Xna.Framework.Graphics;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -9,6 +14,7 @@ namespace ufocode
 		private static bool isUpdating;
 
 		private static List<Entity> entities = new List<Entity>();
+		// To be added after the last update
 		private static List<Entity> newEntities = new List<Entity>();
 
 		// Separated for collision purposes

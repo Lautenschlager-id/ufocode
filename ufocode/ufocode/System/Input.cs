@@ -1,4 +1,9 @@
-﻿using Microsoft.Xna.Framework;
+﻿/// UfoCode - Copyright (C) Shallow
+/// <summary>
+/// The input manager, handles the mouse, keyboard, joysticks and others.
+/// </summary>
+
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 
 namespace ufocode

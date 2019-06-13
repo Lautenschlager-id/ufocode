@@ -1,4 +1,10 @@
-﻿using Microsoft.Xna.Framework;
+﻿/// UfoCode - Copyright (C) Shallow
+/// <summary>
+/// The game manager, with the original Update and Draw methods.
+/// All the important system goes here.
+/// </summary>
+
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
 namespace ufocode
@@ -8,6 +14,7 @@ namespace ufocode
 		private GraphicsDeviceManager graphics;
 		private SpriteBatch spriteBatch;
 
+		// To be used in static methods, getters and setters.
 		public static UfoCode Instance { get; private set; }
 
 		private static Viewport viewPort

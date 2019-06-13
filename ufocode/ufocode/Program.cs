@@ -1,3 +1,8 @@
+/// UfoCode - Copyright (C) Shallow
+/// <summary>
+/// The main class of the game, where the game starts.
+/// </summary>
+
 namespace ufocode
 {
 #if WINDOWS

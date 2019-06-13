@@ -1,4 +1,9 @@
-﻿using Microsoft.Xna.Framework;
+﻿/// UfoCode - Copyright (C) Shallow
+/// <summary>
+/// Abstract class for all entities of the game (characters, bullets, ...).
+/// </summary>
+
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
 namespace ufocode

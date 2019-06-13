@@ -1,4 +1,9 @@
-﻿using Microsoft.Xna.Framework;
+﻿/// UfoCode - Copyright (C) Shallow
+/// <summary>
+/// Misc utilities.
+/// </summary>
+
+using Microsoft.Xna.Framework;
 
 namespace ufocode
 {
