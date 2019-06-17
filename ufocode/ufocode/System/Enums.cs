@@ -7,8 +7,8 @@ namespace ufocode
 {
 	static class Enums
 	{
-		public const float BackgroundDepth = 0;
-		public const float MiddlegroundDepth = .5f;
-		public const float ForegroundDepth = 1;
+		public const float BACKGROUND_DEPTH = 0;
+		public const float MIDDLEGROUND_DEPTH = .5f;
+		public const float FOREGROUND_DEPTH = 1;
 	}
 }

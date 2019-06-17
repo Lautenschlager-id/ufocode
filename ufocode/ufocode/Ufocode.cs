@@ -43,6 +43,7 @@ namespace ufocode
 
 		protected override void Initialize()
 		{
+			Settings.LoadSettings();
 			base.Initialize();
 		}
 
@@ -50,7 +51,7 @@ namespace ufocode
 		{
 			spriteBatch = new SpriteBatch(GraphicsDevice);
 
-			SpriteContent.LoadContent(Content);
+			ImageContent.LoadContent(Content);
 			FontContent.LoadContent(Content);
 			SoundContent.LoadContent(Content);
 		}

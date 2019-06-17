@@ -41,7 +41,7 @@ namespace ufocode
 		// All hitboxes are circles
 		private static bool OnCollision(Entity e1, Entity e2)
 		{
-			if (e1.Destroy || e2.Destroy) return false;
+			if (e1.Remove || e2.Remove) return false;
 			return Mathematics.Pythagoras(e1.Position, e2.Position, (e1.Radius + e2.Radius));
 		}
 
@@ -58,9 +58,9 @@ namespace ufocode
 				Insert(e);
 			newEntities.Clear();
 
-			entities = entities.Where(e => !e.Destroy).ToList();
-			ufos = ufos.Where(e => !e.Destroy).ToList();
-			energyOrbs = energyOrbs.Where(e => !e.Destroy).ToList();
+			entities = entities.Where(e => !e.Remove).ToList();
+			ufos = ufos.Where(e => !e.Remove).ToList();
+			energyOrbs = energyOrbs.Where(e => !e.Remove).ToList();
 		}
 
 		public static void Draw(SpriteBatch spriteBatch)

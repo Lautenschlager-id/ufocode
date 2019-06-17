@@ -10,7 +10,7 @@ namespace ufocode
 {
 	abstract class Entity
 	{
-		public bool Destroy = false;
+		public bool Remove = false;
 
 		public float Angle, Radius, Scale = 1;
 
@@ -18,7 +18,7 @@ namespace ufocode
 		public Vector2 Size { get; private set; }
 		public Vector2 HalfSize { get; private set; }
 
-		protected float Depth = Enums.MiddlegroundDepth;
+		protected float Depth = Enums.MIDDLEGROUND_DEPTH;
 		protected Color Color = Color.White;
 
 		private Texture2D sprite;
