@@ -1,4 +1,4 @@
-﻿/// UfoCode - Copyright (C) Shallow
+/// UfoCode - Copyright (C) Shallow
 /// <summary>
 /// The font content loader, where the fonts are loaded and managed.
 /// </summary>
