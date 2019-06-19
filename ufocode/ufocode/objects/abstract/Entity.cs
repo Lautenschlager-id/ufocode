@@ -8,7 +8,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace ufocode
 {
-	abstract class Entity
+	internal abstract class Entity
 	{
 		public bool Remove = false;
 
@@ -33,6 +33,11 @@ namespace ufocode
 
 				sprite = value;
 			}
+		}
+
+		public Entity()
+		{
+			EntityManager.New(this);
 		}
 
 		public abstract void Update();

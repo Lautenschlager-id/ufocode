@@ -3,33 +3,29 @@
 /// Represents a game character.
 /// </summary>
 
+using Microsoft.Xna.Framework;
+
 namespace ufocode
 {
 	// Character
-	class Ufo : Entity
+	internal class Ufo : Entity
 	{
 		public float Life { get; private set; }
-		private float roundLife; // Life initial value may be changed once per battle, not per round.
+
+		private Vector2 ScreenLimit;
 
 		public Ufo()
 		{
-			// System
-			roundLife = (float)Settings.UFO_LIFE.VALUE;
-
 			// Esthetic
 			Sprite = ImageContent.Ufo;
 
-			EntityManager.New(this);
-		}
-
-		public void NewRound()
-		{
-			Life = roundLife;
+			// Screen limit to stop acceleration
+			ScreenLimit = new Vector2(UfoCode.GameBoundary.Width, UfoCode.GameBoundary.Height) - HalfSize;
 		}
 
 		public override void Update()
 		{
-
+			Position = Vector2.Clamp(Position + Velocity, HalfSize, ScreenLimit);
 		}
 	}
 }

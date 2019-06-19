@@ -8,7 +8,7 @@ using Microsoft.Xna.Framework.Input;
 
 namespace ufocode
 {
-	static class Input
+	internal static class Input
 	{
 		private static MouseState lastMouseState, currentMouseState;
 

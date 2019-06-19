@@ -6,19 +6,17 @@
 namespace ufocode
 {
 	// UFO Bullet
-	class EnergyOrb : Entity
+	internal class EnergyOrb : Entity
 	{
 		public EnergyOrb()
 		{
 			Sprite = ImageContent.EnergyOrb;
-
-			EntityManager.New(this);
 		}
 
 		public override void Update()
 		{
 			// Destroys the entity when it's out of the screen
-			if (!UfoCode.ScreenBound.Contains(Position.ToPoint()))
+			if (!UfoCode.GameBoundary.Contains(Position.ToPoint()))
 				Remove = true;
 		}
 	}

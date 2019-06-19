@@ -4,11 +4,10 @@
 /// </summary>
 
 using Microsoft.Xna.Framework;
-using System;
 
 namespace ufocode
 {
-	static class Utils
+	internal static class Utils
 	{
 		public static Point ToPoint(this Vector2 v)
 		{
@@ -19,13 +18,6 @@ namespace ufocode
 		{
 			p.X = ((p.X < min.X) ? min.X : ((p.X > max.X) ? max.X : p.X));
 			p.Y = ((p.Y < min.Y) ? min.Y : ((p.Y > max.Y) ? max.Y : p.Y));
-			return p;
-		}
-
-		public static Point Clamp(this Point p, Point max)
-		{
-			p.X = ((p.X > max.X) ? max.X : p.X);
-			p.Y = ((p.Y > max.Y) ? max.Y : p.Y);
 			return p;
 		}
 	}

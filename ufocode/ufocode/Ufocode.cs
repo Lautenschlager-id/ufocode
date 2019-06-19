@@ -9,9 +9,9 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace ufocode
 {
-	public class UfoCode : Game
+	internal class UfoCode : Game
 	{
-		private GraphicsDeviceManager graphics;
+		private static GraphicsDeviceManager graphics;
 		private SpriteBatch spriteBatch;
 
 		// To be used in static methods, getters and setters.
@@ -23,13 +23,27 @@ namespace ufocode
 		}
 
 		// Total area of the window.
-		public static Vector2 ScreenDimension
+		public static Vector2 WindowBoundary
 		{
 			get => new Vector2(viewPort.Width, viewPort.Height);
 		}
 
+		// Total area of the screen.
+		public static Vector2 ScreenDimension
+		{
+			get => new Vector2(GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width - 10, GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height - 70);
+		}
+
 		// Area of the window where the action is limited.
-		public static Rectangle ScreenBound { get; set; }
+		public static Rectangle GameBoundary { get; set; }
+
+		// Resizes the window
+		public static void Resize(int Width, int Height)
+		{
+			graphics.PreferredBackBufferWidth = (int)MathHelper.Clamp(Width, 50, ScreenDimension.X);
+			graphics.PreferredBackBufferHeight = (int)MathHelper.Clamp(Height, 50, ScreenDimension.Y);
+			graphics.ApplyChanges();
+		}
 
 		public UfoCode()
 		{

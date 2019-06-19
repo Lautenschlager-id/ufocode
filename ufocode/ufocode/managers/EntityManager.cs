@@ -9,7 +9,7 @@ using System.Linq;
 
 namespace ufocode
 {
-	static class EntityManager
+	internal static class EntityManager
 	{
 		private static bool isUpdating;
 
@@ -18,8 +18,9 @@ namespace ufocode
 		private static List<Entity> newEntities = new List<Entity>();
 
 		// Separated for collision purposes
-		private static List<Ufo> ufos = new List<Ufo>();
+		public static List<Ufo> ufos = new List<Ufo>();
 		private static List<EnergyOrb> energyOrbs = new List<EnergyOrb>();
+		private static List<API> players = new List<API>();
 
 		private static void Insert(Entity e)
 		{
@@ -38,6 +39,11 @@ namespace ufocode
 				Insert(e);
 		}
 
+		public static void New(API p)
+		{
+			players.Add(p as API);
+		}
+
 		// All hitboxes are circles
 		private static bool OnCollision(Entity e1, Entity e2)
 		{
@@ -49,6 +55,8 @@ namespace ufocode
 		{
 			isUpdating = true;
 
+			foreach (API p in players)
+				p.Update();
 			foreach (Entity e in entities)
 				e.Update();
 

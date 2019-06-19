@@ -5,10 +5,18 @@
 
 namespace ufocode
 {
-	static class Enums
+	internal static class Enums
 	{
-		public const float BACKGROUND_DEPTH = 0;
-		public const float MIDDLEGROUND_DEPTH = .5f;
-		public const float FOREGROUND_DEPTH = 1;
+		// Drawing depths
+		public const float BACKGROUND_DEPTH   = 0.0f;
+		public const float MIDDLEGROUND_DEPTH = 0.5f;
+		public const float FOREGROUND_DEPTH   = 1.0f;
+
+		// Interface
+		public const int INTERFACE_WIDTH  = 120;
+		public const int INTERFACE_HEIGHT = 050;
+
+		// Values
+		public const float ENEMY_DISTANCE = 100f;
 	}
 }

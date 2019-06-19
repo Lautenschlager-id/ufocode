@@ -7,7 +7,7 @@ using Microsoft.Xna.Framework.Content;
 
 namespace ufocode
 {
-	static class FontContent
+	internal static class FontContent
 	{
 		public static void LoadContent(ContentManager content)
 		{

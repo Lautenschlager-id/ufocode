@@ -8,7 +8,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace ufocode
 {
-	static class ImageContent
+	internal static class ImageContent
 	{
 		// Objects
 		public static Texture2D Ufo { get; private set; }
